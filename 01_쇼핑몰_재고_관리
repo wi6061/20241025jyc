@@ -1,0 +1,33 @@
+#include <stdio.h>
+#define SIZE 100
+int main() {
+    int arr[SIZE];
+    int arr1[SIZE];
+    int num;
+    int num1;
+    scanf("%d",&num);
+    printf("상품의 총 개수: %d\n",num);
+    for(int i=0; i<num ; i++){
+        scanf("%d",&arr[i]);
+    }
+    for(int i=0; i<num ; i++){
+        scanf("%d",&arr1[i]);
+    }
+    scanf("%d",&num1);
+    printf("상품 별 입고 수량: ");
+    for(int i=0; i<num ; i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+    printf("상품 별 판매 수량: ");
+    for(int i=0; i<num ; i++){
+        printf("%d ",arr1[i]);
+    }
+    printf("\n");
+    printf("입력한 ID의 재고 수량: %d\n",arr[num1]-arr1[num1]);
+    printf("모든 상품의 재고 수량: ");
+    for(int i=0; i<num ; i++){
+        printf("%d ",arr[i]-arr1[i]);
+    }
+    return 0;
+}
