@@ -1,0 +1,50 @@
+#include <stdio.h>
+#define SIZE 100
+float sell(float sum,float sum1){
+    return (sum/sum1)*100;
+}
+int main() {
+    int arr[SIZE];
+    int arr1[SIZE];
+    int num=0;
+    int num1=0;
+    int sum=0;
+    int sum1=0.0;
+    scanf("%d",&num);
+    for(int i=0; i<num ; i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    printf("상품의 총 개수: %d\n",num);
+    for(int i=0; i<num ; i++){
+        scanf("%d",&arr1[i]);
+    }
+    
+    printf("재고 수량: ");
+    for(int i=0; i<num ; i++){
+        printf("%d ",arr[i]-arr1[i]);
+    }
+    printf("\n");
+    
+    for(int i=0; i<num ; i++){
+        sum+=arr1[i];
+    }
+    
+    for(int i=0; i<num ; i++){
+        sum1+=arr[i];
+    }
+    
+    printf("총 판매량: %d(판매율 %.2lf)",sum,sell(sum,sum1));
+    
+    scanf("%d",&num1);
+    printf("상품 별 입고 수량: ");
+    for(int i=0; i<num ; i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+    printf("상품 별 판매 수량: ");
+    for(int i=0; i<num ; i++){
+        printf("%d ",arr1[i]);
+    }
+    return 0;
+}
